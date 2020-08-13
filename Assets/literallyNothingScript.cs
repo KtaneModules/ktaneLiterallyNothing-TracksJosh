@@ -1,1 +1,23 @@
-using UnityEngine;using System.Collections;public class ExampleNeedyModule : MonoBehaviour{void Awake(){GetComponent<KMNeedyModule>().OnNeedyActivation += OnNeedyActivation;GetComponent<KMNeedyModule>().OnNeedyDeactivation += OnNeedyDeactivation;GetComponent<KMNeedyModule>().OnTimerExpired += OnTimerExpired;}protected bool Solve(){GetComponent<KMNeedyModule>().OnPass();return false;}private readonly string TwitchHelpMessage = @"Use !{0} () to do literally nothing";IEnumerator ProcessTwitchCommand(string Command) {yield return null;yield return "awardpoints -1";}}
+using UnityEngine;
+using System.Collections;
+
+public class LiterallyNothing : MonoBehaviour
+{
+    void Awake()
+    {
+
+    }
+
+    protected bool Solve()
+    {
+        GetComponent<KMNeedyModule>().OnPass(); return false;
+    }
+
+    private readonly string TwitchHelpMessage = @"Use !{0} () to do literally nothing";
+
+    IEnumerator ProcessTwitchCommand(string Command)
+    {
+        yield return null;
+        yield return "awardpoints -1";
+    }
+}
